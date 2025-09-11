@@ -147,6 +147,7 @@
     static internal Skapa Skapa = new Skapa();
     static internal Tatltuae Tatltuae = new Tatltuae();
     static internal Firefly Firefly = new Firefly();
+    static internal Cherub Cherub = new Cherub();
 
 
     static internal DefaultRaceData GetRace(Unit unit)
@@ -450,6 +451,8 @@
                 return Trex;
             case Race.Utahraptor:
                 return Utahraptor;
+            case Race.Cherub:
+                return Cherub;
         }
         UnityEngine.Debug.LogWarning("Couldn't find race, substituting the Blank Slate");
         return BlankSlate;

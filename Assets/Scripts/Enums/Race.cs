@@ -39,7 +39,7 @@
     Bears = 34,
     Umbreon = 35,
     Lupine = 36,
-    Jackals  = 37,
+    Jackals = 37,
     Ghosts = 38,
 
     Succubi = 50,
@@ -145,4 +145,5 @@
     Skapa = 189,
     Tatltuae = 190,
     Firefly = 191,
+    Cherub = 192,
 }

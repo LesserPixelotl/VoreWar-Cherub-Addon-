@@ -144,6 +144,7 @@ static class RaceParameters
     static readonly RaceTraits EarthDryad;
     static readonly RaceTraits RiverDryad;
     static readonly RaceTraits FungalDryad;
+    static readonly RaceTraits Cherub;
 
     static Unit tempUnit;
 
@@ -449,6 +450,8 @@ static class RaceParameters
                 return Trex;
             case Race.Utahraptor:
                 return Utahraptor;
+            case Race.Cherub:
+                return Cherub;
             case (Race)700: //Singled out so that it doesn't make the debug message
                 return Default;
             case (Race)701:
@@ -567,7 +570,7 @@ static class RaceParameters
         {
             Traits.PackStrength,
             Traits.PackVoracity,
-			Traits.Tenacious,
+            Traits.Tenacious,
         },
             RaceDescription = "Natives of this realm, the Wolves have a history of hunting in packs extending beyond the crafting of their first weapons. While a lone Wolf can still be a worthy adversary, their true strength comes from working with their kin.",
         };
@@ -682,7 +685,7 @@ static class RaceParameters
             Traits.MagicResistance,
             Traits.AstralCall,
         },
-		RaceStats = new RaceStats()
+            RaceStats = new RaceStats()
             {
                 Strength = new RaceStats.StatRange(6, 14),
                 Dexterity = new RaceStats.StatRange(6, 14),
@@ -746,7 +749,7 @@ static class RaceParameters
             Traits.Ravenous,
             Traits.Biter,
             Traits.DualStomach,
-			Traits.StrongGullet
+            Traits.StrongGullet
         },
             RaceDescription = "Natives to this realm, these legless beings were once the strongest and largest hunters of the land. The sudden emergence of many new species left the Lamia uncertain at first, but soon their dual stomachs won and they focused on testing the taste of the new arrivals.",
         };
@@ -3990,7 +3993,7 @@ static class RaceParameters
             RaceDescription = "Erin belongs to a very rare species known as a Nyangel, the lovechild of an angel and a catgirl.  Thanks to this divine heritage they aremostly all incredible healers... But they're also incredibly tasty.  Every Nyangel has a unique trait to set them apart from eachother, and Erin is no exception to this rule.  Her quirk is total acid resistance, the perfect defense against the raveous predators of this realm.  That doesn't stop her from being devoured, however, and that is unfortunately an all-too-common outcome for the girl.  Regardless of how many times she ends up eaten, the loveable Nyangel still tries her best to heal those she can.",
         };
 
-        
+
 
         Salix = new RaceTraits()
         {
@@ -4198,7 +4201,7 @@ static class RaceParameters
             BodySize = 60,
             StomachSize = 40,
             FavoredStat = Stat.Voracity,
-            AllowedVoreTypes = new List<VoreType> { VoreType.Oral, VoreType.Anal, VoreType.CockVore , VoreType.Unbirth },
+            AllowedVoreTypes = new List<VoreType> { VoreType.Oral, VoreType.Anal, VoreType.CockVore, VoreType.Unbirth },
             ExpMultiplier = 2f,
             PowerAdjustment = 4f,
             DeployCost = 1,
@@ -4323,6 +4326,43 @@ static class RaceParameters
             Traits.Prey,//Perma-prey until vore sprites added
         },
             RaceDescription = "An unnatural Umbreon from a different universe from the others. His body shape seems different than the Umbreons, Having a differently shaped head, digigrade legs, and a fox like appearance. He claims to come from a realm where the world was much more advanced, having been transported with what he calls a \"HND15\" some kind of \"handgun\" similar to the tarous' revolvers. Being from another realm these bullets are in short supply, forcing him to save the magazines and to forge new bullets to load into them. He also carries around a knife for backup, it seems extra sharp compared to the others of it's kind. Although he prefers to stick along side them, He claims to not be related to the Anthro Umbreons that roam around.",
+        };
+        
+        Cherub = new RaceTraits()
+        {
+            BodySize = 20,
+            StomachSize = 35,
+            FavoredStat = Stat.Mind,
+            HasTail = true,
+            AllowedVoreTypes = new List<VoreType> { VoreType.Oral, VoreType.Anal },
+            ExpMultiplier = 2f,
+            PowerAdjustment = 9f,
+            DeployCost = 2,
+            Upkeep = 21f,
+            RaceStats = new RaceStats()
+            {
+                Strength = new RaceStats.StatRange(4, 10),
+                Dexterity = new RaceStats.StatRange(4, 10),
+                Endurance = new RaceStats.StatRange(10, 15),
+                Mind = new RaceStats.StatRange(18, 25),
+                Will = new RaceStats.StatRange(18, 25),
+                Agility = new RaceStats.StatRange(8, 11),
+                Voracity = new RaceStats.StatRange(15, 20),
+                Stomach = new RaceStats.StatRange(12, 15),
+            },
+            RacialTraits = new List<Traits>()
+        {
+                Traits.SlowMetabolism,
+                Traits.BoundWeapon,
+                Traits.Flight,
+                Traits.PleasurableTouch,
+                Traits.ManaDrain,
+                Traits.ManaDynamo,
+        },
+        InnateSpells = new List<SpellTypes>()
+            { SpellTypes.DivinitysEmbrace, SpellTypes.ForcePulse, },
+            RaceAI = RaceAI.Hedonist,
+            RaceDescription = "A mysterious angelic being that suddenly manifested into the physical plane. They sport powerful magical abilities and an innate sense of the evil and malice which they hunger for. Despite their friendly demeanor, they have a bad habit of devouring mortals in an attempt to cleanse them of impurity.",
         };
 
 

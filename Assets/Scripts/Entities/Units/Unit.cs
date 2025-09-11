@@ -1010,6 +1010,15 @@ public class Unit
             }
             catch { }
         }
+        else if (race == Race.Cherub)
+        {
+            try
+            {
+                FixedGear = false;
+                Items[0] = State.World.ItemRepository.GetSpecialItem(SpecialItems.CherubWeapon);
+            }
+            catch { }
+        }
         else
         {
             FixedGear = false;
