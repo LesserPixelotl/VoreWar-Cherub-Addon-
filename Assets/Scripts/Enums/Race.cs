@@ -146,4 +146,5 @@
     Tatltuae = 190,
     Firefly = 191,
     Cherub = 192,
+    Seraph = 193,
 }

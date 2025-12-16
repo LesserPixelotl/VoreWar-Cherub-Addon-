@@ -319,6 +319,7 @@ public class SpriteDictionary : MonoBehaviour
     public Sprite[] Tatltuae;
     public Sprite[] Firefly;
     public Sprite[] Cherub;
+    public Sprite[] Seraph;
     
     [Header("Bosses")]
     public Sprite[] Abakhanskya;

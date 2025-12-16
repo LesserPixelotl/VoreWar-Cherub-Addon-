@@ -382,6 +382,8 @@ static class LogUtilities
                 return GetRandomStringFrom("bare skinned", "pointy-eared", "knife-eared");
             case Race.Tatltuae:
                 return GetRandomStringFrom("black feathered", "rosemary flavored", "purple eyed", "slightly cowardly", "complaining", "hollow boned");
+            case Race.Cherub:
+                return GetRandomStringFrom("pink-furred", "ditzy", "angelic", "marshmallow-flavored");
             default:
                 return "tasty";
         }
@@ -468,6 +470,8 @@ static class LogUtilities
                 return GetRandomStringFrom("humble", "cunning", "resourceful");
             case Race.Tatltuae:
                 return GetRandomStringFrom("black feathered", "chaotic", "purple eyed", "ominous", "unnerving", "omen-bringing");
+            case Race.Cherub:
+                return GetRandomStringFrom("pink-furred", "three eyed", "otherworldly", "divine");
             default:
                 return "strong";
         }
@@ -618,6 +622,8 @@ static class LogUtilities
                 return GetRandomStringFrom("cartograher", "raven", "chaos mage", "corvid", State.Rand.Next(42) == 1 ? "bird" : "birb");
             case Race.Terrorbird:
                 return GetRandomStringFrom("bird", "long-necked avian", "flightless bird", "anger bird");
+            case Race.Cherub:
+                return GetRandomStringFrom("angel", "holy beast", "angelic being", "cherubim");
             default:
                 return "creature";
         }

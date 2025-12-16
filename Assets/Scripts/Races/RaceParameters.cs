@@ -145,6 +145,7 @@ static class RaceParameters
     static readonly RaceTraits RiverDryad;
     static readonly RaceTraits FungalDryad;
     static readonly RaceTraits Cherub;
+    static readonly RaceTraits Seraph;
 
     static Unit tempUnit;
 
@@ -452,6 +453,8 @@ static class RaceParameters
                 return Utahraptor;
             case Race.Cherub:
                 return Cherub;
+            case Race.Seraph:
+                return Seraph;
             case (Race)700: //Singled out so that it doesn't make the debug message
                 return Default;
             case (Race)701:
@@ -4363,6 +4366,44 @@ static class RaceParameters
             { SpellTypes.DivinitysEmbrace, SpellTypes.ForcePulse, },
             RaceAI = RaceAI.Hedonist,
             RaceDescription = "A mysterious angelic being that suddenly manifested into the physical plane. They sport powerful magical abilities and an innate sense of the evil and malice which they hunger for. Despite their friendly demeanor, they have a bad habit of devouring mortals in an attempt to cleanse them of impurity.",
+        };
+
+        Seraph = new RaceTraits()
+        {
+            BodySize = 100,
+            StomachSize = 80,
+            FavoredStat = Stat.Mind,
+            HasTail = true,
+            AllowedVoreTypes = new List<VoreType> { VoreType.Oral, VoreType.Anal },
+            ExpMultiplier = 20f,
+            PowerAdjustment = 100f,
+            DeployCost = 8,
+            Upkeep = 150f,
+            RaceStats = new RaceStats()
+            {
+                Strength = new RaceStats.StatRange(30, 35),
+                Dexterity = new RaceStats.StatRange(30, 35),
+                Endurance = new RaceStats.StatRange(30, 35),
+                Mind = new RaceStats.StatRange(45, 50),
+                Will = new RaceStats.StatRange(40, 50),
+                Agility = new RaceStats.StatRange(25, 30),
+                Voracity = new RaceStats.StatRange(20, 25),
+                Stomach = new RaceStats.StatRange(20, 25),
+            },
+            RacialTraits = new List<Traits>()
+        {
+                Traits.SlowerMetabolism,
+                Traits.BoundWeapon,
+                Traits.Flight,
+                Traits.FastCaster,
+                Traits.ManaDrain,
+                Traits.ManaDynamo,
+                Traits.Legendary,
+                Traits.BookEater,
+        },
+        InnateSpells = new List<SpellTypes>()
+            { SpellTypes.DivinitysEmbrace, SpellTypes.ForcePulse, },
+            RaceDescription = "The leader of the angelic beings that descended onto this world. Seraph has existed before recorded history and does not take lightly to troublemakers that disrupt the karmic balance of the world. Their arrival usually precedes a grand shift in the dynamics of a region, usually ending up with them leaving much fatter than they came.",
         };
 
 
