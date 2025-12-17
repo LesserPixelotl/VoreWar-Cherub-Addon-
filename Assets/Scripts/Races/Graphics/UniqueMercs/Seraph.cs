@@ -7,21 +7,21 @@ class Seraph : BlankSlate
     internal Seraph()
     {
         CanBeGender = new List<Gender>() { Gender.None };
-        Head = new SpriteExtraInfo(8, HeadSprite, WhiteColored);
-        Body = new SpriteExtraInfo(7, BodySprite, WhiteColored);
-        BodyAccessory = new SpriteExtraInfo(9, AccessorySprite, WhiteColored); // Leg overlay
+        Head = new SpriteExtraInfo(12, HeadSprite, WhiteColored);
+        Body = new SpriteExtraInfo(8, BodySprite, WhiteColored);
+        BodyAccessory = new SpriteExtraInfo(10, AccessorySprite, WhiteColored); // Leg overlay
         BodyAccentTypes1 = 2; // Halo
         BodyAccentTypes2 = 2; // Wings1
         BodyAccentTypes3 = 2; // Wings2
-        BodyAccent = new SpriteExtraInfo(2, BodyAccentSprite, WhiteColored);
-        BodyAccent2 = new SpriteExtraInfo(10, BodyAccentSprite2, WhiteColored);
-        BodyAccent3 = new SpriteExtraInfo(1, BodyAccentSprite3, WhiteColored);
-        BodyAccent4 = new SpriteExtraInfo(1, BodyAccentSprite4, WhiteColored); // Tail
-        Belly = new SpriteExtraInfo(8, null, WhiteColored);
-        Weapon = new SpriteExtraInfo(2, WeaponSprite, WhiteColored); // Left (Attacking) Arm
-        SecondaryAccessory = new SpriteExtraInfo(10, SecondaryAccessorySprite, WhiteColored); // Right Arm
+        BodyAccent = new SpriteExtraInfo(3, BodyAccentSprite, WhiteColored);
+        BodyAccent2 = new SpriteExtraInfo(11, BodyAccentSprite2, WhiteColored);
+        BodyAccent3 = new SpriteExtraInfo(2, BodyAccentSprite3, WhiteColored);
+        BodyAccent4 = new SpriteExtraInfo(2, BodyAccentSprite4, WhiteColored); // Tail
+        Belly = new SpriteExtraInfo(9, null, WhiteColored);
+        Weapon = new SpriteExtraInfo(3, WeaponSprite, WhiteColored); // Left (Attacking) Arm
+        SecondaryAccessory = new SpriteExtraInfo(11, SecondaryAccessorySprite, WhiteColored); // Right Arm
         clothingColors = 0;
-        BodySize = new SpriteExtraInfo(5, BodySizeSprite, WhiteColored);
+        BodySize = new SpriteExtraInfo(6, BodySizeSprite, WhiteColored);
         BodySizes = 5;        
     }
 

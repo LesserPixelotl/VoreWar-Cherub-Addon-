@@ -384,6 +384,8 @@ static class LogUtilities
                 return GetRandomStringFrom("black feathered", "rosemary flavored", "purple eyed", "slightly cowardly", "complaining", "hollow boned");
             case Race.Cherub:
                 return GetRandomStringFrom("pink-furred", "ditzy", "angelic", "marshmallow-flavored");
+            case Race.Seraph:
+                return GetRandomStringFrom("blue-furred", "stoic", "angelic", "marshmallow-flavored", "formerly powerful");
             default:
                 return "tasty";
         }
@@ -472,6 +474,8 @@ static class LogUtilities
                 return GetRandomStringFrom("black feathered", "chaotic", "purple eyed", "ominous", "unnerving", "omen-bringing");
             case Race.Cherub:
                 return GetRandomStringFrom("pink-furred", "three eyed", "otherworldly", "divine");
+            case Race.Seraph:
+                return GetRandomStringFrom("blue-furred", "three eyed", "otherworldly", "divine", "aloof", "draconic", "ancient");
             default:
                 return "strong";
         }
@@ -624,6 +628,8 @@ static class LogUtilities
                 return GetRandomStringFrom("bird", "long-necked avian", "flightless bird", "anger bird");
             case Race.Cherub:
                 return GetRandomStringFrom("angel", "holy beast", "angelic being", "cherubim");
+            case Race.Seraph:
+                return GetRandomStringFrom("angel", "holy dragon", "angelic being", "seraphim", "ancient one");
             default:
                 return "creature";
         }

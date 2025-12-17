@@ -4392,17 +4392,15 @@ static class RaceParameters
             },
             RacialTraits = new List<Traits>()
         {
-                Traits.SlowerMetabolism,
-                Traits.BoundWeapon,
-                Traits.Flight,
-                Traits.FastCaster,
-                Traits.ManaDrain,
-                Traits.ManaDynamo,
+                Traits.DestroyingAngel,
                 Traits.Legendary,
+                Traits.ManaAttuned,
+                Traits.ManaBarrier,
+                Traits.Flight,
                 Traits.BookEater,
         },
         InnateSpells = new List<SpellTypes>()
-            { SpellTypes.DivinitysEmbrace, SpellTypes.ForcePulse, },
+            { SpellTypes.DivinitysEmbrace, SpellTypes.DivineNova, },
             RaceDescription = "The leader of the angelic beings that descended onto this world. Seraph has existed before recorded history and does not take lightly to troublemakers that disrupt the karmic balance of the world. Their arrival usually precedes a grand shift in the dynamics of a region, usually ending up with them leaving much fatter than they came.",
         };
 

@@ -1019,6 +1019,15 @@ public class Unit
             }
             catch { }
         }
+        else if (race == Race.Seraph)
+        {
+            try
+            {
+                FixedGear = false;
+                Items[0] = State.World.ItemRepository.GetSpecialItem(SpecialItems.SeraphWeapon);
+            }
+            catch { }
+        }
         else
         {
             FixedGear = false;

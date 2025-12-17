@@ -112,6 +112,7 @@ static class SpellList
     static internal readonly StatusSpell ViperPoisonStatus;
     static internal readonly StatusSpell ViralInfection;
     static internal readonly StatusSpell DivinitysEmbrace;
+    static internal readonly DamageSpell DivineNova;
 
     static internal Dictionary<SpellTypes, Spell> SpellDict;
 
@@ -1653,6 +1654,51 @@ static class SpellList
             },
         };
         SpellDict[SpellTypes.ForkLightning] = ForkLightning;
+
+        DivineNova = new DamageSpell()
+        {
+            Name = "Divine Nova",
+            Id = "divine-nova",
+            SpellType = SpellTypes.DivineNova,
+            Description = "The user expends all mana to deal damage based on the mana spent to a large area",
+            AcceptibleTargets = new List<AbilityTargets>() { AbilityTargets.Enemy, AbilityTargets.Tile },
+            Range = new Range(6),
+            Tier = 0,
+            AOEType = AreaOfEffectType.FixedPattern,
+            Pattern = new int[5, 5] { { 0, 1, 1, 1, 0 }, { 1, 1, 1, 1, 1 }, { 1, 1, 1, 1, 1 }, { 1, 1, 1, 1, 1 }, { 0, 1, 1, 1, 0 }},
+            Damage = (a, t) => (a.Unit.Mana / 4) + a.Unit.GetStat(Stat.Mind) / 4,
+            Resistable = true,
+            ResistanceMult = 0.2f,
+            OnExecute = (a, t) =>
+            {
+                a.CastOffensiveSpell(DivineNova, t);
+                float pulseDamage = 1.2f;
+                foreach (var splashTarget in TacticalUtilities.UnitsWithinTiles(t.Position, 2))
+                {
+                    TacticalUtilities.CheckSpellKnockBack(t.Position, a, splashTarget, ref pulseDamage);
+                    TacticalUtilities.SpellKnockBack(t.Position, a, splashTarget);
+                }
+                TacticalUtilities.CheckKnockBack(a, t, ref pulseDamage);
+                TacticalUtilities.KnockBack(a, t);
+                TacticalGraphicalEffects.CreateGenericMagic(a.Position, t.Position, t);
+                State.GameManager.SoundManager.PlaySpellCast(PowerBolt, a);
+                a.Unit.SpendMana(a.Unit.Mana);
+            },
+            OnExecuteTile = (a, l) =>
+            {
+                a.CastOffensiveSpell(DivineNova, null, l);
+                float pulseDamage = 1.2f;
+                foreach (var splashTarget in TacticalUtilities.UnitsWithinTiles(l, 2))
+                {
+                    TacticalUtilities.CheckSpellKnockBack(l, a, splashTarget, ref pulseDamage);
+                    TacticalUtilities.SpellKnockBack(l, a, splashTarget);
+                }
+                TacticalGraphicalEffects.CreateGenericMagic(a.Position, l, null);
+                State.GameManager.SoundManager.PlaySpellCast(PowerBolt, a);
+                a.Unit.SpendMana(a.Unit.Mana);
+            },
+        };
+        SpellDict[SpellTypes.DivineNova] = DivineNova;
     }
 }
 
