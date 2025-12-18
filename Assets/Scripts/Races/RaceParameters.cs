@@ -4398,6 +4398,12 @@ static class RaceParameters
                 Traits.ManaBarrier,
                 Traits.Flight,
                 Traits.BookEater,
+                Traits.CreateSpawn,
+        },
+        SpawnRace = Race.Whisp,
+            SpawnTraits = new List<Traits>()
+        {
+                Traits.Prey
         },
         InnateSpells = new List<SpellTypes>()
             { SpellTypes.DivinitysEmbrace, SpellTypes.DivineNova, },
